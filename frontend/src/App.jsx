@@ -1,10 +1,18 @@
 import "./App.css";
+import Login from "./Components/Auth/Login";
+import List from "./Components/User/List";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
+  const handleLogin = (credentials) => {
+    console.log("Logging in with:", credentials);
+    // You can perform your login logic or API request here
+  };
+
   return (
-    <>
-      <h1>User Management System</h1>
-    </>
+    <div>
+      <Login onLogin={handleLogin} />
+    </div>
   );
 }
 

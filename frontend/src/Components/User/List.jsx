@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Table, Spinner, Alert } from "react-bootstrap";
 
-const UserList = () => {
+const List = () => {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -29,12 +29,12 @@ const UserList = () => {
   }
 
   return (
-    <div className="container mt-4">
-      <h1>User List</h1>
+    <div className="container bg-light p-4">
+      <h3>User List</h3>
+      <br />
       <Table striped bordered hover responsive>
         <thead className="thead-dark">
           <tr>
-            <th>ID</th>
             <th>Name</th>
             <th>Email</th>
             <th>Last Login</th>
@@ -43,7 +43,6 @@ const UserList = () => {
         <tbody>
           {users.map((user) => (
             <tr key={user.id}>
-              <td>{user.id}</td>
               <td>{user.name}</td>
               <td>{user.email}</td>
               <td>
@@ -59,4 +58,4 @@ const UserList = () => {
   );
 };
 
-export default UserList;
+export default List;
